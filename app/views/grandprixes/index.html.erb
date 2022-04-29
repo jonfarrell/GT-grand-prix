@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Grand Prix</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @grandprixes.each do |grandprix| %>
+      <tr>
+        <td><%= grandprix.name %></td>
+        <td><%= grandprix.description %></td>
+        <td><%= link_to 'Show', grandprix %></td>
+        <td><%= link_to 'Edit', edit_grandprix_path(grandprix) %></td>
+        <td><%= link_to 'Destroy', grandprix, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Grandprix', new_grandprix_path %>

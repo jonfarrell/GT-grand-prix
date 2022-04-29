@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @grandprix_circuit.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @grandprix_circuit.description %>
+</p>
+
+<%= link_to 'Edit', edit_grandprix_circuit_path(@grandprix_circuit) %> |
+<%= link_to 'Back', grandprix_circuits_path %>

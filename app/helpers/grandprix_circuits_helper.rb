@@ -1,0 +1,2 @@
+module GrandprixCircuitsHelper
+end
