@@ -8,7 +8,7 @@ class GrandprixesController < ApplicationController
   end
 
   def set_my_grandprix
-    @grandprix = grandprixes.find(params[:id])
+    @grandprix = current_user.grandprixes.find(params[:id])
   end
 
   # GET /grandprixes/1 or /grandprixes/1.json
@@ -26,7 +26,7 @@ class GrandprixesController < ApplicationController
 
   # POST /grandprixes or /grandprixes.json
   def create
-    @grandprix = Grandprix.new(grandprix_params)
+    @grandprix = current_user.grandprixes.build(grandprix_params)
 
     respond_to do |format|
       if @grandprix.save

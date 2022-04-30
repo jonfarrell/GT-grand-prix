@@ -1,0 +1,67 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Races</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Grandprix circuit</th>
+      <th>P1</th>
+      <th>P2</th>
+      <th>P3</th>
+      <th>P4</th>
+      <th>P5</th>
+      <th>P6</th>
+      <th>P7</th>
+      <th>P8</th>
+      <th>P9</th>
+      <th>P10</th>
+      <th>P11</th>
+      <th>P12</th>
+      <th>P13</th>
+      <th>P14</th>
+      <th>P15</th>
+      <th>P16</th>
+      <th>P17</th>
+      <th>P18</th>
+      <th>P19</th>
+      <th>P20</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @races.each do |race| %>
+      <tr>
+        <td><%= race.grandprix_circuit_id %></td>
+        <td><%= race.p1 %></td>
+        <td><%= race.p2 %></td>
+        <td><%= race.p3 %></td>
+        <td><%= race.p4 %></td>
+        <td><%= race.p5 %></td>
+        <td><%= race.p6 %></td>
+        <td><%= race.p7 %></td>
+        <td><%= race.p8 %></td>
+        <td><%= race.p9 %></td>
+        <td><%= race.p10 %></td>
+        <td><%= race.p11 %></td>
+        <td><%= race.p12 %></td>
+        <td><%= race.p13 %></td>
+        <td><%= race.p14 %></td>
+        <td><%= race.p15 %></td>
+        <td><%= race.p16 %></td>
+        <td><%= race.p17 %></td>
+        <td><%= race.p18 %></td>
+        <td><%= race.p19 %></td>
+        <td><%= race.p20 %></td>
+        <td><%= link_to 'Show', race %></td>
+        <td><%= link_to 'Edit', edit_race_path(race) %></td>
+        <td><%= link_to 'Destroy', race, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Race', new_race_path %>

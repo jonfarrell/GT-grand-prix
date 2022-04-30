@@ -12,7 +12,7 @@ class GrandprixCircuitsController < ApplicationController
 
   # GET /grandprix_circuits/new
   def new
-    @grandprix_circuit = GrandprixCircuit.new
+    @grandprix_circuit = GrandprixCircuit.new()
   end
 
   # GET /grandprix_circuits/1/edit
@@ -65,6 +65,6 @@ class GrandprixCircuitsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def grandprix_circuit_params
-      params.require(:grandprix_circuit).permit(:name, :description)
+      params.require(:grandprix_circuit).permit(:grandprix_id, :circuit_id)
     end
 end

@@ -1,0 +1,119 @@
+<%= form_with(model: race) do |form| %>
+  <% if race.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(race.errors.count, "error") %> prohibited this race from being saved:</h2>
+
+      <ul>
+        <% race.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form.hidden_field :grandprix_circuit_id, value: params[:grandprix_circuit_id] %>
+
+  <div class="field">
+    <%= form.label :p1 %>
+    <%= form.select :p1, options_for_select(User.all.pluck(:name, :id)) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :p2 %>
+    <%= form.select :p2, options_for_select(User.all.pluck(:name, :id)) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :p3 %>
+    <%= form.select :p3, options_for_select(User.all.pluck(:name, :id)) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :p4 %>
+    <%= form.number_field :p4 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :p5 %>
+    <%= form.number_field :p5 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :p6 %>
+    <%= form.number_field :p6 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :p7 %>
+    <%= form.number_field :p7 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :p8 %>
+    <%= form.number_field :p8 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :p9 %>
+    <%= form.number_field :p9 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :p10 %>
+    <%= form.number_field :p10 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :p11 %>
+    <%= form.number_field :p11 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :p12 %>
+    <%= form.number_field :p12 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :p13 %>
+    <%= form.number_field :p13 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :p14 %>
+    <%= form.number_field :p14 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :p15 %>
+    <%= form.number_field :p15 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :p16 %>
+    <%= form.number_field :p16 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :p17 %>
+    <%= form.number_field :p17 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :p18 %>
+    <%= form.number_field :p18 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :p19 %>
+    <%= form.number_field :p19 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :p20 %>
+    <%= form.number_field :p20 %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
