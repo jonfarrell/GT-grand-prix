@@ -10,5 +10,7 @@
   <%= @grandprix.description %>
 </p>
 
+<%= button_to "Add Circuit", new_grandprix_circuit_path(grandprix_id: @grandprix.id), method: :get %>
+
 <%= link_to 'Edit', edit_grandprix_path(@grandprix) %> |
 <%= link_to 'Back', grandprixes_path %>

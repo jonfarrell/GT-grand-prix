@@ -1,6 +1,5 @@
 class CircuitsController < ApplicationController
   before_action :set_circuit, only: [:show, :edit, :update, :destroy]
-  before_action :set_grandprix, only: [:new, :edit]
 
   # GET /circuits or /circuits.json
   def index
@@ -23,11 +22,9 @@ class CircuitsController < ApplicationController
   # POST /circuits or /circuits.json
   def create
     @circuit = Circuit.new(circuit_params)
-    @grandprix = Grandprix.find(grandprix_params[:grandprix_id])
     respond_to do |format|
-      if @product.save
-        Grandprix_circuit.create(grandprix_id: @grandprix.id, circuit_id: @circuit.id)
-        format.html { redirect_to @grandprix, notice: 'Circuit was successfully created.' }
+      if @circuit.save
+        format.html { redirect_to @circuit, notice: 'Circuit was successfully created.' }
         format.json { render :show, status: :created, location: @circuit }
       else
         format.html { render :new }
@@ -69,10 +66,6 @@ class CircuitsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_circuit
       @circuit = Circuit.find(params[:id])
-    end
-
-    def set_grandprix
-      @grandprix = Grandprix.find(params[:grandprix_id])
     end
 
     # Only allow a list of trusted parameters through.
